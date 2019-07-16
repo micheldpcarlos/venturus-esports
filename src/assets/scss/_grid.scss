@@ -1,0 +1,20 @@
+$grid-columns: 12;
+$content-padding: 5%;
+
+.container {
+  width: 100%;
+  padding-right: $content-padding;
+  padding-left: $content-padding;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    flex: 0 0 100% / $grid-columns * $i;
+  }
+}

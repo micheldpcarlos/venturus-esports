@@ -1,0 +1,14 @@
+// Variables
+@import './assets/scss/variables';
+
+
+body {
+  height: 100vh;
+  background: $color-snow;
+  font-family: $font-body;
+}
+
+header {
+  padding: 3rem 0;
+  background-color: $color-white;
+}
