@@ -1,0 +1,16 @@
+<div class="breadcrumb">
+  <div class="container">
+    <span class="home">
+      <fa-icon [icon]="faHome" class="home__icon" *ngIf="breadcrumbConfig.showIcon; else textHome"></fa-icon>
+      <ng-template #textHome>
+        <span class="home__text">Home</span>
+      </ng-template>
+    </span>
+
+    <span class="fragment" *ngFor="let fragment of breadcrumbConfig.urlFragments">
+        <fa-icon [icon]="faChevronRight" class="fragment__icon" title="/"></fa-icon>
+        <span class="fragment__text" [title]="fragment.fragment" >{{fragment.text}}</span>
+    </span>
+
+  </div>
+</div>

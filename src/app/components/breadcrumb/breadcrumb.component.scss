@@ -1,0 +1,56 @@
+@import "../../../assets/scss/variables";
+
+$text-size: 14px;
+$margin-size: 20px;
+
+.breadcrumb {
+  background: $color-snow;
+  padding: 10px 0;
+}
+
+.home {
+  color: $color-green;
+  margin-right: $margin-size;
+
+  &__icon {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    font-size: $text-size;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.fragment {
+  &__icon {
+    color: $color-grey;
+  }
+
+  &__text {
+    color: $color-green;
+    cursor: pointer;
+    font-size: $text-size;
+    margin: 0 $margin-size;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &:last-child>&__text {
+    color: $color-dark;
+    cursor: auto;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
