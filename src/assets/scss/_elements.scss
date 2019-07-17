@@ -1,14 +1,48 @@
 // Variables
-@import './assets/scss/variables';
-
+@import "./assets/scss/variables";
 
 body {
-  height: 100vh;
+  width:100vw;
+  height:100vh;
   background: $color-snow;
   font-family: $font-body;
+  font-size: 16px;
+  color: $color-dark;
 }
 
 header {
-  padding: 3rem 0;
+  padding: 2rem 0;
   background-color: $color-white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 5rem;
+
+
+  th,
+  td {
+    font-size: 16px;
+    padding: 20px;
+    text-align: left;
+  }
+
+  thead {
+    th {
+      border-bottom: 1px solid $color-dark;
+      font-weight: 500;
+    }
+  }
+
+  tbody {
+    tr:nth-child(even) {
+      background-color: $color-light-grey;
+    }
+
+    tr:hover {
+      background-color: $color-medium-grey;
+    }
+
+  }
 }
