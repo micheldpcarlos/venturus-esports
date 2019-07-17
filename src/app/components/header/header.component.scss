@@ -1,4 +1,4 @@
-@import '../../assets/scss/variables';
+@import '../../../assets/scss/variables';
 
 .header {
   height: 100%;
@@ -28,5 +28,31 @@
     font-size: 24px;
     color: $color-dark;
     margin-left: 16px;
+  }
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__initials {
+    color: $color-dark;
+    border: 1px solid $color-dark;
+    border-radius: 50%;
+    font-size: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__name{
+    margin: 16px;
+  }
+
+  &__icon{
+    color: $color-dark;
   }
 }
