@@ -45,7 +45,7 @@ export class SportsService {
   }
 
   public getCustomInfo() {
-    const url = environment.API_URL + '/custom-info';
+    const url = environment.MOCK_URL + '/custom-info';
     return this.http.get<CustomInfo[]>(url)
   }
 
@@ -83,12 +83,10 @@ export class SportsService {
   }
 
   private countUserAlbums(userId: number, albums: Album[]): number {
-    // console.log(albums.filter(item => item.userId === userId))
     return albums.filter(item => item.userId === userId).length
   }
 
   private countUserPosts(userId: number, posts: Post[]): number {
-    // console.log(posts.filter(item => item.userId === userId));
     return posts.filter(item => item.userId === userId).length
   }
 

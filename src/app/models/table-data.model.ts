@@ -6,7 +6,7 @@ export interface TableData {
   name: string;
   username: string;
   email: string;
-  address: Address;
+  address?: Address;
   rideInGroup: string;
   dayOfTheWeek: Week;
   posts: number;

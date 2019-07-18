@@ -12,6 +12,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { CustomInfoInterceptor } from './interceptors/custom-info.interceptor';
+import { WeekDaysTextPipe } from './pipes/week-days-text.pipe';
+import { UsersFormComponent } from './components/users-form/users-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { CustomInfoInterceptor } from './interceptors/custom-info.interceptor';
     HeaderComponent,
     BreadcrumbComponent,
     SectionTitleComponent,
-    UsersListComponent
+    UsersListComponent,
+    WeekDaysTextPipe,
+    UsersFormComponent
   ],
   imports: [
     BrowserModule,
