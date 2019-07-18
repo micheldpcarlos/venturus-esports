@@ -6,95 +6,97 @@
   </div>
   <div class="row">
     <div class="form-container">
-      <div class="row">
-        <div class="col-6 pd-r">
-          <div class="custom-input">
-            <label>Last Name</label>
-            <input class="custom-input" type="text" required>
-            <span class="hint">Put a really nice username here.</span>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-6 pd-r">
+            <div class="custom-input">
+              <label>Username</label>
+              <input class="custom-input" type="text" formControlName="userName" required>
+              <span class="hint">Enter a really nice username here.</span>
+            </div>
+          </div>
+          <div class="col-6 pd-l">
+            <div class="custom-input">
+              <label>City</label>
+              <input class="custom-input" type="text" formControlName="city">
+              <span class="hint">City name here.</span>
+              <div class="optional">optional</div>
+            </div>
           </div>
         </div>
-        <div class="col-6 pd-l">
-          <div class="custom-input">
-            <label>City</label>
-            <input class="custom-input" type="text">
-            <span class="hint">City name here.</span>
-            <div class="optional">Optional</div>
+        <div class="row">
+          <div class="col-6 pd-r">
+            <div class="custom-input">
+              <label>Name</label>
+              <input class="custom-input" type="text" formControlName="name" required>
+              <span class="hint">Just some instructions.</span>
+            </div>
+          </div>
+          <div class="col-6 pd-l">
+            <span class="group-desc">Ride in Group?</span>
+            <label class="custom-radio">Aways
+              <input type="radio" value="Aways" formControlName="rideInGroup">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-radio">Sometimes
+              <input type="radio" value="Sometimes" formControlName="rideInGroup">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-radio">Never
+              <input type="radio" value="Never" formControlName="rideInGroup">
+              <span class="checkmark"></span>
+            </label>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-6 pd-r">
-          <div class="custom-input">
-            <label>Name</label>
-            <input class="custom-input" type="text" required>
-            <span class="hint">Just some instructions.</span>
-          </div>
-        </div>
-        <div class="col-6 pd-l">
-          <span class="group-desc">Ride in Group?</span>
-          <label class="custom-radio">Aways
-            <input type="radio" checked="checked" name="radio">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom-radio">Sometimes
-            <input type="radio" name="radio">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom-radio">Never
-            <input type="radio" name="radio">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-6 pd-r">
-          <div class="custom-input">
-            <label>E-mail</label>
-            <input class="custom-input" type="text" required>
-            <span class="hint">You e-mail address.</span>
+        <div class="row">
+          <div class="col-6 pd-r">
+            <div class="custom-input">
+              <label>E-mail</label>
+              <input class="custom-input" type="text" formControlName="email" required>
+              <span class="hint">You e-mail address.</span>
+            </div>
+          </div>
+          <div class="col-6 pd-l" formGroupName="daysOfTheWeek">
+            <span class="group-desc">Days of the Week</span>
+            <label class="custom-checkbox">Sun
+              <input type="checkbox" formControlName="sun">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-checkbox">Mon
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-checkbox">Tue
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-checkbox">Wed
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-checkbox">Thu
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-checkbox">Fri
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-checkbox">Sat
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
           </div>
         </div>
-        <div class="col-6 pd-l">
-          <span class="group-desc">Days of the Week</span>
-          <label class="custom-checkbox">Sun
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom-checkbox">Mon
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom-checkbox">Tue
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom-checkbox">Wed
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom-checkbox">Thu
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom-checkbox">Fri
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom-checkbox">Sat
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-12">
-          <button class="button button--primary" type="submit">Save</button>
-          <button class="button button--secondary" type="submit">Discard</button>
+        <div class="row">
+          <div class="col-12">
+            <button class="button button--primary" type="submit" [disabled]="!userForm.valid">Save</button>
+            <button class="button button--secondary" (click)="clearForm()" type="button">Discard</button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

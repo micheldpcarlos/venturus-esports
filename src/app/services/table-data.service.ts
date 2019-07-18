@@ -23,6 +23,12 @@ export class TableDataService {
     const userIndex: number = users.findIndex(user => user.userId === id);
     users.splice(userIndex, 1);
 
-    this.userData$.next(users)
+    this.userData$.next(users);
+  }
+
+  public addUser(userData: TableData) {
+    const users: TableData[] = this.userData$.getValue();
+    users.push(userData);
+    this.userData$.next(users);
   }
 }

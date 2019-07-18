@@ -5,11 +5,11 @@ export interface Geo {
 }
 
 export interface Address {
-  street: string;
-  suite: string;
+  street?: string;
+  suite?: string;
   city: string;
-  zipcode: string;
-  geo: Geo;
+  zipcode?: string;
+  geo?: Geo;
 }
 
 export interface Company {

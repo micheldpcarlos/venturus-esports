@@ -30,6 +30,7 @@
     border: 1px solid $color-input-line;
     width: 100%;
     transition: all 300ms;
+    color: $color-dark;
 
     &:focus {
       outline: none;
