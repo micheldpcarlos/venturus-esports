@@ -1,0 +1,23 @@
+@import "../../../assets/scss/variables";
+
+.form-container {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  border-top: 1px solid $color-dark;
+  padding: 40px 0;
+}
+
+.pd-l {
+  padding-left: 25px;
+}
+
+.pd-r {
+  padding-right: 25px;
+}
+
+.group-desc {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+}
