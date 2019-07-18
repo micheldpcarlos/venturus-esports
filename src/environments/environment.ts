@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://jsonplaceholder.typicode.com'
+  API_URL: 'https://jsonplaceholder.typicode.com',
+  MOCK_URL: 'custom-mock-info'
 };
 
 /*

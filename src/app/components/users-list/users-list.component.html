@@ -1,4 +1,4 @@
-<div class="container user-list">
+<div class="container">
   <div class="row">
     <div class="col-12">
       <app-section-title title="Users"></app-section-title>
@@ -19,25 +19,31 @@
               <th>Day of the week</th>
 
               <th>Posts</th>
-              <th>Albuns</th>
+              <th>Albums</th>
               <th>Photos</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,99]">
-              <td>Usuario</td>
-              <td>Michel</td>
-              <td>micheldpcarlos@gmail.com</td>
-              <td>Aguai</td>
-              <td>Always</td>
-              <td>Every Day</td>
-              <td>3</td>
-              <td>2</td>
-              <td>39</td>
-              <td></td>
+            <tr *ngFor="let user of tableData">
+              <td>{{user.username}}</td>
+              <td>{{user.name}}</td>
+              <td>
+                <a href="mailto:{{user.email}}" target="_blank">{{user.email}}</a>
+              </td>
+              <td>
+                <a href="https://www.google.com/maps/search/?api=1&query={{user.address.geo.lat}},{{user.address.geo.lng}}" target="_blank" *ngIf="user.address.geo">{{user.address.city}}</a>
+              </td>
+              <td>{{user.rideInGroup}}</td>
+              <td>{{user.dayOfTheWeek | weekDaysText}}</td>
+              <td>{{user.posts}}</td>
+              <td>{{user.albums}}</td>
+              <td>{{user.photos}}</td>
+              <td><fa-icon [icon]="faTrashAlt" class="remove-icon" (click)="removeUser(user.userId)"></fa-icon></td>
             </tr>
-
+            <tr>
+              <td colspan="10" style="text-align: center" *ngIf="tableData.length === 0">No users were found</td>
+            </tr>
           </tbody>
         </table>
       </div>

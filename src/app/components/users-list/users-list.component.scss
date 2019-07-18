@@ -1,9 +1,18 @@
 @import '../../../assets/scss/variables';
 
-.user-list {
-  background: $color-white;
-}
-
 .table-wrapper {
   overflow: hidden;
+}
+
+.remove-icon {
+  color: $color-green;
+  opacity: 0;
+  transition: all 50ms;
+  font-size: 14px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+tr:hover .remove-icon{
+  opacity: 1;
 }

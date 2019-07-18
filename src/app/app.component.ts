@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BreadcrumbConfig } from './models/breadcrumb.model';
-import { text } from '@fortawesome/fontawesome-svg-core';
-import { SportsService } from './services/sports.service';
+import { TableDataService } from './services/table-data.service';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +10,11 @@ import { SportsService } from './services/sports.service';
 export class AppComponent implements OnInit{
   public breadcrumbConfig = breadcrumbConfig;
 
-  constructor(private sportsService: SportsService) {
-
+  constructor(private tableDataService: TableDataService) {
+    
   }
 
   ngOnInit() {
-    this.sportsService.getTableData().subscribe(res => console.log(res));
   }
 }
 
