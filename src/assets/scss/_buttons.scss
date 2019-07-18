@@ -21,6 +21,10 @@
     &:hover {
       background: darken($color-green, 5%);
     }
+    &:disabled {
+      background: lighten($color-green, 20%);
+      color: $color-medium-grey;
+    }
   }
 
   &--secondary{

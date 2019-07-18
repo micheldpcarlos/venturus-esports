@@ -1,0 +1,20 @@
+@import "../../../assets/scss/variables";
+
+.sport-info {
+  padding: 20px 0;
+  background: lighten($color-green, 40%);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    height: 100px;
+    width: 50px;
+  }
+}
+
+.info-item {
+  &__icon {
+    color: $color-green;
+    font-size: 30px;
+  }
+}

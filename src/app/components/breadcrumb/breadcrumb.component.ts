@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-import { BreadcrumbConfig } from '../../models/breadcrumb.model'
+import { BreadcrumbConfig } from '../../models/breadcrumb.model';
 
 @Component({
   selector: 'app-breadcrumb',

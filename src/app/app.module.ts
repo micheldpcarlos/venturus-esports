@@ -14,6 +14,8 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { CustomInfoInterceptor } from './interceptors/custom-info.interceptor';
 import { WeekDaysTextPipe } from './pipes/week-days-text.pipe';
 import { UsersFormComponent } from './components/users-form/users-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SportInfoComponent } from './components/sport-info/sport-info.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { UsersFormComponent } from './components/users-form/users-form.component
     SectionTitleComponent,
     UsersListComponent,
     WeekDaysTextPipe,
-    UsersFormComponent
+    UsersFormComponent,
+    SportInfoComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: CustomInfoInterceptor, multi: true }
