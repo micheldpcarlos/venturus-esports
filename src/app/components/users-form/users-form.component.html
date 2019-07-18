@@ -32,12 +32,19 @@
           </div>
         </div>
         <div class="col-6 pd-l">
-          <div class="custom-input">
-            <label>City</label>
-            <input class="custom-input" type="text" required>
-            <span class="hint">City name</span>
-            <div class="optional">Optional</div>
-          </div>
+          <span class="group-desc">Ride in Group?</span>
+          <label class="custom-radio">Aways
+            <input type="radio" checked="checked" name="radio">
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-radio">Sometimes
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-radio">Never
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label>
         </div>
       </div>
 
@@ -46,7 +53,7 @@
           <div class="custom-input">
             <label>E-mail</label>
             <input class="custom-input" type="text" required>
-            <span class="hint">Just some instructions.</span>
+            <span class="hint">You e-mail address.</span>
           </div>
         </div>
         <div class="col-6 pd-l">
@@ -79,6 +86,13 @@
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <button class="button button--primary" type="submit">Save</button>
+          <button class="button button--secondary" type="submit">Discard</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,33 @@
+.button {
+  display: inline-block;
+  margin: 0 5px;
+  border-radius: 6px;
+  font-family: "Lato", sans-serif;
+  font-size: 16.5px;
+  padding: 12px 20px;
+  border: 0;
+  background: #34495E;
+  color: #FFF;
+  cursor: pointer;
+  outline: 0;
+  font-weight: 300;
+
+  &:hover {
+    background: #005580;
+  }
+
+  &--primary {
+      background: $color-green;
+    &:hover {
+      background: darken($color-green, 5%);
+    }
+  }
+
+  &--secondary{
+    background: $color-medium-grey;
+    color: $color-dark;
+  &:hover {
+    background: darken($color-medium-grey, 5%);
+  }
+}
+}
