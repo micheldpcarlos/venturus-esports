@@ -20,7 +20,7 @@ export class UsersListComponent implements OnInit {
 
   search = new FormControl('');
 
-  constructor(private tableDataService: TableDataService) { 
+  constructor(private tableDataService: TableDataService) {
     this.search.valueChanges.subscribe(result => {
       this.filterTableData(result);
     })
@@ -35,10 +35,10 @@ export class UsersListComponent implements OnInit {
 
   filterTableData(filterText: string) {
     this.filteredTableData = this.tableData.filter(item => {
-      return item.name.includes(filterText) ||
-      item.username.includes(filterText) ||
-      item.email.includes(filterText) ||
-      item.address && item.address.city.includes(filterText);
+      return item.name.toLowerCase().includes(filterText.toLowerCase()) ||
+        item.username.toLowerCase().includes(filterText.toLowerCase()) ||
+        item.email.toLowerCase().includes(filterText.toLowerCase()) ||
+        item.address && item.address.city.toLowerCase().includes(filterText.toLowerCase());
     });
 
     console.log(this.filteredTableData)
