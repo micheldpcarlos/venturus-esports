@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-12 question-list">
+    <div class="question-item" *ngFor="let question of questionsAndAnswers">
+      <p class="question">{{question.question}}</p>
+      <span class="answer">
+        <fa-icon [icon]="question.icon" class="answer__icon"></fa-icon>
+        <p class="answer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua.</p>
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+@import "../../../assets/scss/variables";
+
+.question-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.question-item {
+  display: flex;
+  flex-direction: column;
+
+  .question {
+    font-size: 24px;
+    color: lighten($color-green, 10%);
+    font-weight: 200;
+    margin-bottom: 20px;
+  }
+
+  .answer {
+    display: flex;
+
+    &__icon {
+      font-size: 56px;
+      color: $color-green;
+    }
+
+    &__text {
+      font-size: 16px;
+      margin: 0 20px;
+      max-width: 340px;
+
+    }
+  }
+}
+
+.question-text {
+  p {
+    &:first-child {
+      color: lighten($color-dark, 20%);
+      font-weight: 300;
+    }
+    &:last-child {
+      color: $color-dark;
+      font-size: 28px;
+      font-weight: 600;
+    }
+  }
+}
