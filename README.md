@@ -1,10 +1,12 @@
 # VenturusEsports
 
-Front End Developer test realized in less than 18 hours of work (always afterwork) to Venturus.
+Front End Developer test realized in 3 days (after work time) to Venturus.
 
 An online version of this project can be viewed [HERE](https://venturus-sports.web.app) 
 
 ## Features developed
+
+All features from Requirements were developed.
 
 1. User table containing information from specific endpoint.
 2. E-mail column with link to user’s e-mail address.
