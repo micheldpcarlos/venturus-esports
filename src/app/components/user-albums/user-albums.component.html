@@ -1,15 +1,21 @@
 <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <app-section-title title="{{user?.name}} Albums"></app-section-title>
-      </div>
+  <div class="row">
+    <div class="col-12">
+      <app-section-title title="{{user?.name}} Albums"></app-section-title>
     </div>
-    <div class="row">
-      <div class="col-12 album-list">
-        <div class="user-album" *ngFor="let album of userAlbums; let i = index">
-          <img [src]="albumsCover[i]?.thumbnailUrl" alt="" *ngIf="albumsCover[i]?.thumbnailUrl">
-          <p class="user-album__title">{{album.title}}</p>
+  </div>
+  <div class="row">
+    <div class="col-12 album-list">
+      <div class="user-album" *ngFor="let album of userAlbums; let i = index">
+        <p class="user-album__title">{{album.title}}</p>
+        <hr>
+        <div class="image-container">
+          <div *ngFor="let image of albumsPhotos[i]" class="photo">
+            <img [src]="image.thumbnailUrl" alt="">
+            <p>{{image.title}}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>

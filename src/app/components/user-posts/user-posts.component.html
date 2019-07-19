@@ -6,9 +6,17 @@
   </div>
   <div class="row">
     <div class="col-12 post-list">
-      <div class="user-post" *ngFor="let post of userPosts">
+      <div class="user-post" *ngFor="let post of userPosts; let i = index">
         <p class="user-post__title">{{post.title}}</p>
         <p class="user-post__body">{{post.body}}</p>
+        <hr>
+        <p class="comments__title">Comments</p>
+        <div class="comments__area">
+          <div class="comment" *ngFor="let comment of postsComments[i]">
+            <strong>{{comment.name}}</strong>
+            <p>{{comment.body}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

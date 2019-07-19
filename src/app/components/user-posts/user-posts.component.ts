@@ -12,6 +12,7 @@ import { User } from 'src/app/models/user.model';
 export class UserPostsComponent implements OnInit {
 
   public userPosts: Post[];
+  public postsComments = [];
   public user: User;
   constructor(private sportsService: SportsService, private route: ActivatedRoute) { }
 
@@ -24,6 +25,11 @@ export class UserPostsComponent implements OnInit {
 
     this.sportsService.getPostsByUser(uid).subscribe(result => {
       this.userPosts = result;
+      this.userPosts.forEach((post, index) => {
+        this.sportsService.getCommentsByPostId(post.id).subscribe(comments => {
+          this.postsComments[index] = comments;
+        })
+      })
     });
 
   }

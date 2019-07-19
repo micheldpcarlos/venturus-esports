@@ -13,7 +13,7 @@ import { Photo } from 'src/app/models/photo.model';
 export class UserAlbumsComponent implements OnInit {
 
   public userAlbums: Album[];
-  public albumsCover: Photo[] = [];
+  public albumsPhotos = [];
   public user: User;
   constructor(private sportsService: SportsService, private route: ActivatedRoute) { }
 
@@ -27,9 +27,9 @@ export class UserAlbumsComponent implements OnInit {
     this.sportsService.getAlbumsByUser(uid).subscribe(result => {
       this.userAlbums = result;
 
-      this.userAlbums.forEach(album => {
-        this.sportsService.getPhotoForAlbumCover(album.id).subscribe(result => {
-          this.albumsCover.push(result[0]);
+      this.userAlbums.forEach((album, index)=> {
+        this.sportsService.getPhotosByAlbumId(album.id).subscribe(result => {
+          this.albumsPhotos[index] = result;
         })
       })
     });

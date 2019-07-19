@@ -43,6 +43,11 @@ export class SportsService {
     return this.http.get<Post[]>(url)
   }
 
+  public getCommentsByPostId(postId: number) {
+    const url = environment.API_URL + '/comments?postId=' + postId;
+    return this.http.get<Comment[]>(url)
+  }
+
   // Albums
   public getAlbums() {
     const url = environment.API_URL + '/albums';
@@ -60,8 +65,8 @@ export class SportsService {
     return this.http.get<Photo[]>(url)
   }
 
-  public getPhotoForAlbumCover(albumId: number) {
-    const url = environment.API_URL + '/photos?_limit=1&albumId=' + albumId;
+  public getPhotosByAlbumId(albumId: number) {
+    const url = environment.API_URL + '/photos?_limit=5&albumId=' + albumId;
     return this.http.get<Photo[]>(url);
   }
 
