@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-section-title title="{{user?.name}} Posts"></app-section-title>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 post-list">
+      <div class="user-post" *ngFor="let post of userPosts">
+        <p class="user-post__title">{{post.title}}</p>
+        <p class="user-post__body">{{post.body}}</p>
+      </div>
+    </div>
+  </div>
+</div>

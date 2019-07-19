@@ -1,0 +1,23 @@
+@import "../../../assets/scss/variables";
+
+.exit-bar {
+  padding: 10px 0;
+  background: lighten($color-green, 40%);
+}
+
+.exit {
+  color: $color-green;
+  cursor: pointer;
+
+  &__text {
+    font-size: 20px;
+    color: inherit;
+  }
+
+  &__icon {
+    margin-right: 10px;
+    font-size: 20px;
+    color: inherit;
+    
+  }
+}

@@ -1,21 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { BreadcrumbConfig } from './models/breadcrumb.model';
-import { TableDataService } from './services/table-data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  // animations: [
+  //   slideInAnimation
+  // ]
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   public breadcrumbConfig = breadcrumbConfig;
 
-  constructor(private tableDataService: TableDataService) {
-    
-  }
-
-  ngOnInit() {
-  }
+  constructor() {}
 }
 
 

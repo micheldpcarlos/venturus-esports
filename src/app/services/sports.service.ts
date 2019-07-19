@@ -21,42 +21,63 @@ export class SportsService {
 
   constructor(private http: HttpClient) { }
 
+  // Users
   public getUsers() {
     const url = environment.API_URL + '/users';
     return this.http.get<User[]>(url)
   }
 
+  public getUser(userId: number) {
+    const url = environment.API_URL + '/users/' + userId;
+    return this.http.get<User>(url)
+  }
 
+  // Posts
   public getPosts() {
     const url = environment.API_URL + '/posts';
     return this.http.get<Post[]>(url)
   }
 
+  public getPostsByUser(userId: number) {
+    const url = environment.API_URL + '/posts?userId=' + userId;
+    return this.http.get<Post[]>(url)
+  }
 
+  // Albums
   public getAlbums() {
     const url = environment.API_URL + '/albums';
     return this.http.get<Album[]>(url)
   }
 
+  public getAlbumsByUser(userId: number) {
+    const url = environment.API_URL + '/albums?userId=' + userId;
+    return this.http.get<Album[]>(url)
+  }
 
+  // Photos
   public getPhotos() {
     const url = environment.API_URL + '/photos';
     return this.http.get<Photo[]>(url)
   }
 
+  public getPhotoForAlbumCover(albumId: number) {
+    const url = environment.API_URL + '/photos?_limit=1&albumId=' + albumId;
+    return this.http.get<Photo[]>(url);
+  }
+
+  // Custom Mock Info
   public getCustomInfo() {
     const url = environment.MOCK_URL + '/custom-info';
     return this.http.get<CustomInfo[]>(url)
   }
 
+  // Consolidated Table Data Info
   public getTableData() {
     const users = this.getUsers();
     const posts = this.getPosts();
     const albums = this.getAlbums();
     const photos = this.getPhotos();
     const customInfo = this.getCustomInfo();
-
-
 
     return forkJoin([users, posts, albums, photos, customInfo]).pipe(map(result => {
       const tableDataArray: TableData[] = [];

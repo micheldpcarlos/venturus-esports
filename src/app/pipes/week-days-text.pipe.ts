@@ -10,7 +10,7 @@ export class WeekDaysTextPipe implements PipeTransform {
   transform(value: Week, ...args: any[]): any {
     const {sun, mon, tue, wed, thu, fri, sat} = value;
 
-    if (sun && !mon && !tue && !wed && !thu && !fri && sat)  return 'Weekends';
+    if (sun && !mon && !tue && !wed && !thu && !fri && sat) return 'Weekends';
     if (!sun && mon && tue && wed && thu && fri && !sat) return 'Week days';
 
     const daysArray: String[] = [];

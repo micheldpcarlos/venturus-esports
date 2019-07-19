@@ -39,7 +39,9 @@ export class UsersListComponent implements OnInit {
       item.username.includes(filterText) ||
       item.email.includes(filterText) ||
       item.address && item.address.city.includes(filterText);
-    })
+    });
+
+    console.log(this.filteredTableData)
   }
 
   removeUser(id: number) {

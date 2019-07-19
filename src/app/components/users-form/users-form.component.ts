@@ -29,6 +29,8 @@ export class UsersFormComponent implements OnInit {
     })
   });
 
+  userFormDefaultValues = this.userForm.value;
+
   constructor(private tableDataService: TableDataService) { }
 
   ngOnInit() {
@@ -62,8 +64,7 @@ export class UsersFormComponent implements OnInit {
 
 
   clearForm() {
-    this.userForm.reset();
-    this.userForm.controls.rideInGroup.setValue('Aways');
+    this.userForm.reset(this.userFormDefaultValues);
   }
 
 }

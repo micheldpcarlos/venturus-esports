@@ -44,15 +44,22 @@
               </td>
               <td>{{user.rideInGroup}}</td>
               <td>{{user.dayOfTheWeek | weekDaysText}}</td>
-              <td>{{user.posts}}</td>
-              <td>{{user.albums}}</td>
+              <td>
+                <a routerLink="/posts/{{user.userId}}" *ngIf="user.posts > 0; else zero">{{user.posts}}</a>
+                <ng-template #zero>{{user.posts}}</ng-template>
+              </td>
+              <td>
+                <a routerLink="/albums/{{user.userId}}" *ngIf="user.albums > 0; else zero">{{user.albums}}</a>
+                <ng-template #zero>{{user.albums}}</ng-template>
+              </td>
               <td>{{user.photos}}</td>
               <td>
                 <fa-icon [icon]="faTrashAlt" class="remove-icon" (click)="removeUser(user.userId)"></fa-icon>
               </td>
             </tr>
             <tr>
-              <td colspan="10" style="text-align: center" *ngIf="filteredTableData.length === 0">No users were found</td>
+              <td colspan="10" style="text-align: center" *ngIf="filteredTableData.length === 0">No users were found
+              </td>
             </tr>
           </tbody>
         </table>
