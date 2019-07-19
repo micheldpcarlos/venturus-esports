@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faPuzzlePiece } from '@fortawesome/free-solid-svg-icons';
+import { faPuzzlePiece, faTrophy, faMapSigns, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sport-info',
@@ -8,10 +8,20 @@ import { faPuzzlePiece } from '@fortawesome/free-solid-svg-icons';
 })
 export class SportInfoComponent implements OnInit {
 
-  faPuzzlePiece = faPuzzlePiece;
+  private sportInfos: SportInfoItem[] = [
+    {icon: faPuzzlePiece, description: 'Sport type', info: 'Cycling'},
+    {icon: faTrophy, description: 'Mode', info: 'Advanced'},
+    {icon: faMapSigns, description: 'Route', info: '30 miles'}
+  ]
   constructor() { }
 
   ngOnInit() {
   }
 
+}
+
+export interface SportInfoItem {
+  icon: IconDefinition,
+  description: string,
+  info: string
 }
