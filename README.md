@@ -1,27 +1,34 @@
 # VenturusEsports
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
+Front End Developer test realized in less than 18 hours of work (always afterwork) to Venturus.
 
-## Development server
+An online version of this project can be viewed [HERE](https://venturus-sports.web.app) 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features developed
 
-## Code scaffolding
+1. User table containing information from specific endpoint.
+2. E-mail column with link to user’s e-mail address.
+3. City column with link to Google Maps using returned coordinates.
+4. "Ride in Group" and "Day of the week" columns using data from fake API via Interceptor.
+5. Posts, Albums and Photos counters from specific endpoints.
+6. User Table with trash icon that removes the user from table.
+7. Registration form following the specification on the UI for the mouse over elements.
+8. Saving registration that includes a new entry following the specifications.
+9. Optional features:
+ - A. Filter User table content by any column using the filter field
+ - B1. Open a new page by clicking on each user’s Posts
+ - B2. Open a new page by clicking on each user’s Albums
+ 
+## Starting local server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Clone this repository
+- Run `npm install` to install project dependencies
+- Run `npm run start`
+- open `http://localhost:4200` in your browser
+
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `ng build` to build the project. 
+The build artifacts will be stored in the `dist/` directory. 
+Use the `--prod` flag for a production build.
