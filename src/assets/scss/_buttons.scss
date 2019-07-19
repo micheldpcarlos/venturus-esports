@@ -22,8 +22,9 @@
       background: darken($color-green, 5%);
     }
     &:disabled {
-      background: lighten($color-green, 20%);
-      color: $color-medium-grey;
+      background: lighten($color-green, 40%);
+      cursor: not-allowed;
+      color: $color-white;
     }
   }
 

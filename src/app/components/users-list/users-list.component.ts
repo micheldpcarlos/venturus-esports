@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TableDataService } from 'src/app/services/table-data.service';
 import { TableData } from 'src/app/models/table-data.model';
-import { Week } from 'src/app/models/custom-info.model';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-users-list',
@@ -12,13 +13,32 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 export class UsersListComponent implements OnInit {
 
   private tableData: TableData[];
-  faTrashAlt = faTrashAlt;
+  public filteredTableData: TableData[];
 
-  constructor(private tableDataService: TableDataService) { }
+  faTrashAlt = faTrashAlt;
+  faSearch = faSearch;
+
+  search = new FormControl('');
+
+  constructor(private tableDataService: TableDataService) { 
+    this.search.valueChanges.subscribe(result => {
+      this.filterTableData(result);
+    })
+  }
 
   ngOnInit() {
     this.tableDataService.userData$.subscribe(result => {
       this.tableData = result;
+      this.filterTableData('');
+    });
+  }
+
+  filterTableData(filterText: string) {
+    this.filteredTableData = this.tableData.filter(item => {
+      return item.name.includes(filterText) ||
+      item.username.includes(filterText) ||
+      item.email.includes(filterText) ||
+      item.address && item.address.city.includes(filterText);
     })
   }
 

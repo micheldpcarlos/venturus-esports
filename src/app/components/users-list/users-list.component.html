@@ -1,7 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-8">
       <app-section-title title="Users"></app-section-title>
+    </div>
+    <div class="col-4 d-flex">
+      <div class="custom-input filter-input">
+        <fa-icon [icon]="faSearch" class="filter-input__icon"></fa-icon>
+        <input class="custom-input" type="text" placeholder="Filter table content" [formControl]="search">
+      </div>
     </div>
   </div>
   <div class="row">
@@ -25,14 +31,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let user of tableData">
+            <tr *ngFor="let user of filteredTableData">
               <td>{{user.username}}</td>
               <td>{{user.name}}</td>
               <td>
                 <a href="mailto:{{user.email}}" target="_blank">{{user.email}}</a>
               </td>
               <td>
-                <a href="https://www.google.com/maps/search/?api=1&query={{user.address.geo.lat}},{{user.address.geo.lng}}" target="_blank" *ngIf="user.address.geo; else cityName">{{user.address.city}}</a>
+                <a href="https://www.google.com/maps/search/?api=1&query={{user.address.geo.lat}},{{user.address.geo.lng}}"
+                  target="_blank" *ngIf="user.address.geo; else cityName">{{user.address.city}}</a>
                 <ng-template #cityName>{{user.address.city}}</ng-template>
               </td>
               <td>{{user.rideInGroup}}</td>
@@ -40,10 +47,12 @@
               <td>{{user.posts}}</td>
               <td>{{user.albums}}</td>
               <td>{{user.photos}}</td>
-              <td><fa-icon [icon]="faTrashAlt" class="remove-icon" (click)="removeUser(user.userId)"></fa-icon></td>
+              <td>
+                <fa-icon [icon]="faTrashAlt" class="remove-icon" (click)="removeUser(user.userId)"></fa-icon>
+              </td>
             </tr>
             <tr>
-              <td colspan="10" style="text-align: center" *ngIf="tableData.length === 0">No users were found</td>
+              <td colspan="10" style="text-align: center" *ngIf="filteredTableData.length === 0">No users were found</td>
             </tr>
           </tbody>
         </table>

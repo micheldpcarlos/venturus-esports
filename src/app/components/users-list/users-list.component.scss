@@ -16,3 +16,21 @@
 tr:hover .remove-icon{
   opacity: 1;
 }
+
+.filter-input {
+  align-self: center;
+  margin-left: 40px;
+  flex: 1;
+
+  &__icon {
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    left: 12px;
+    color: $color-grey;
+  }
+
+  input {
+    padding-left: 30px;
+  }
+}

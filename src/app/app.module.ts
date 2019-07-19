@@ -16,6 +16,7 @@ import { WeekDaysTextPipe } from './pipes/week-days-text.pipe';
 import { UsersFormComponent } from './components/users-form/users-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SportInfoComponent } from './components/sport-info/sport-info.component';
+import { QAndAComponent } from './components/q-and-a/q-and-a.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SportInfoComponent } from './components/sport-info/sport-info.component
     UsersListComponent,
     WeekDaysTextPipe,
     UsersFormComponent,
-    SportInfoComponent
+    SportInfoComponent,
+    QAndAComponent
   ],
   imports: [
     BrowserModule,
