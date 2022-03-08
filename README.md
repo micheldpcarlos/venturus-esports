@@ -1,8 +1,14 @@
-# VenturusEsports
+
+
+>  :star: **I got the job, learned and worked with React.js, had a great time working with React using Antd Design.**
+
+# VenturusEsports 
 
 Front End Developer test realized in 3 days (after work time) to Venturus.
 
-Technologies: Angular 8, Typescript and FontAwesome
+Technologies: <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/angular.svg#gh-light-mode-only" alt="Angular" width=16 height=16><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/assets/readme/angular-white.svg#gh-dark-mode-only" alt="Angular" width=16 height=16>  Angular 8, Typescript and FontAwesome
+
+
 
 
 ![image](https://user-images.githubusercontent.com/29731180/157268303-8a1e2202-7d1c-4240-b162-5e59a2b4b33b.png)
