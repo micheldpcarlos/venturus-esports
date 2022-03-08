@@ -2,6 +2,12 @@
 
 Front End Developer test realized in 3 days (after work time) to Venturus.
 
+Technologies: Angular 8, Typescript and FontAwesome
+
+
+![image](https://user-images.githubusercontent.com/29731180/157268303-8a1e2202-7d1c-4240-b162-5e59a2b4b33b.png)
+
+
 An online version of this project can be viewed [HERE](https://venturus-sports.web.app) 
 
 ## Features developed
